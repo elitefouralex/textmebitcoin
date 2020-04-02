@@ -1,5 +1,7 @@
 # textmebitcoin
-Get an hourly text with the current price of bitcoin.
+Get an hourly text with the current value of bitcoin.
+Get a text with the current value of bitcoin at any interval you wish.
+Originally this was made to run hourly non stop, that has since changed with the latest commit.
 
 this was a length of python code to help learn a new bitcoin code i learned recently.
 
