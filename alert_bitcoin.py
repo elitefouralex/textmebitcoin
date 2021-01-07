@@ -52,12 +52,7 @@ def txt_code():
 						 to= receiving_phone_number
 					 )
 	
-#old lines of code i dont just yet want to delete, so here they are, commented out
-#	print(message.sid)
-#	print(f"\nI sent '{message_to_send}' to {receiving_phone_number} on {local_time}")
-	
-#schedule.every().hour.at("00:00").do(txt_code)
-#schedule.every().day.at("15:44", "15:45").do(txt_code)
+
 perfect_timing()
 
 while True:
