@@ -1,13 +1,11 @@
 #bitcoin scheduler text code
+#please note comment on line 38
 import time
 import requests
 import schedule
 import json
 import os
 from twilio.rest import Client
-
-#run daily between 6am-midnight
-#further modification can specify certain days of the week if you would like
 
 def perfect_timing():
 	schedule.every().day.at("06:00").do(txt_code)
@@ -36,7 +34,9 @@ def txt_code():
 	data = response.json()
 	currency = data["data"]["base"]
 	price = data["data"]["amount"]
-	output4 = (f"{currency} is at {price}")
+	pricetofloat = float(price)
+	wallet_value = pricetofloat * #add your amount of bitcoin here as a float
+	output4 = (f"{currency} {pricetofloat:.2f}, Wallet value is at {wallet_value:.2f}.")
 
 	message_to_send = (output4)
 	receiving_phone_number = os.environ.get("my_phone_number")
@@ -51,9 +51,10 @@ def txt_code():
 						 from_= os.environ.get("twilio_phone_number"),
 						 to= receiving_phone_number
 					 )
-	
+
 
 perfect_timing()
+
 
 while True:
 	schedule.run_pending()
